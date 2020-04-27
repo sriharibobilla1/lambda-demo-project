@@ -10,7 +10,7 @@ ec2client = boto3.client('ec2')
 
 # This decsribes the EC2 Instances filtering with the tag:key/value
 
-response = ec2client.describe_instances(Filters=[{'Name' : 'argKey','Values' : ['argValue']}])
+response = ec2client.describe_instances(Filters=[{'Name' : 'tag:argKey','Values' : ['argValue']}])
 for reservation in response["Reservations"]:
     for instance in reservation["Instances"]:
         
